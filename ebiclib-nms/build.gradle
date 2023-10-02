@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id "io.github.patrick.remapper" version "1.4.0" apply false
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: "io.github.patrick.remapper"
+
+    dependencies {
+        compileOnly project(":ebiclib-core")
+    }
+}
+
+dependencies {
+    for (final def subproject in subprojects) {
+        println subproject.name
+        println subproject.path
+        subproject.plugins.withId("java") {
+            implementation(subproject)
+        }
+    }
+}

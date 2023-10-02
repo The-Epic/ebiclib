@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+dependencies {
+    compileOnly(libs.spigotApi)
+    compileOnly(libs.jetbrainsAnnotations)
+    implementation(libs.bundles.core)
+}

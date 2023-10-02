@@ -1,0 +1,73 @@
+metadata:
+  format: { version: 1.0 }
+
+versions:
+  spigotapi: 1.18.2-R0.1-SNAPSHOT
+  hibernate: 6.2.7.Final
+  placeholderapi: 2.11.3
+  jetbrains-annotations: 24.0.0
+  adventure-api: 4.14.0
+  adventure-bukkit: 4.2.0
+  adventure-minimessage: 4.14.0
+  h2: 2.2.220
+  postgresql: 42.6.0
+  morepdc: 2.4.0
+  hikaricp: 5.0.1
+
+dependencies:
+  spigotApi:
+    group: org.spigotmc
+    name: spigot-api
+    version: { ref: spigotapi}
+  hibernateCore:
+    group: org.hibernate.orm
+    name: hibernate-core
+    version: { ref: hibernate }
+  hibernateHikari:
+    group: org.hibernate.orm
+    name: hibernate-hikaricp
+    version: { ref: hibernate }
+  hibernateDialects:
+    group: org.hibernate.orm
+    name: hibernate-community-dialects
+    version: { ref: hibernate }
+  placeholderApi:
+    group: me.clip
+    name: placeholderapi
+    version: { ref: placeholderapi }
+  jetbrainsAnnotations:
+    group: org.jetbrains
+    name: annotations
+    version: { ref: jetbrains-annotations }
+  adventureApi:
+    group: net.kyori
+    name: adventure-api
+    version: { ref: adventure-api }
+  adventureBukkit:
+    group: net.kyori
+    name: adventure-platform-bukkit
+    version: { ref: adventure-bukkit }
+  adventureMiniMessage:
+    group: net.kyori
+    name: adventure-text-minimessage
+    version: { ref: adventure-minimessage }
+  h2:
+    group: com.h2database
+    name: h2
+    version: { ref: h2 }
+  postgresql:
+    group: org.postgresql
+    name: postgresql
+    version: { ref: postgresql }
+  morepdc:
+    group: com.jeff_media
+    name: MorePersistentDataTypes
+    version: { ref: morepdc }
+
+
+bundles:
+  core:
+    - morepdc
+    - adventureApi
+    - adventureBukkit
+    - adventureMiniMessage

@@ -1,0 +1,29 @@
+plugins {
+    id("ca.stellardrift.polyglot-version-catalogs") version "6.0.1"
+}
+
+rootProject.name = 'ebiclib'
+
+gradle.rootProject {
+    it.version = '1.0.0-SNAPSHOT'
+    it.group = 'xyz.epicebic'
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+        maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+        maven { url = 'https://repo.epicebic.xyz/public' }
+        maven { url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
+        maven { url = "https://repo.jeff-media.com/public" }
+        maven { url = "https://repo.codemc.io/repository/nms/" }
+        maven { url = "https://libraries.minecraft.net/" }
+    }
+}
+
+include("ebiclib-core")
+include 'ebiclib-nms'
+include 'ebiclib-nms:spigot-v1_20_R1'
+findProject(':ebiclib-nms:spigot-v1_20_R1')?.name = 'spigot-v1_20_R1'
+
