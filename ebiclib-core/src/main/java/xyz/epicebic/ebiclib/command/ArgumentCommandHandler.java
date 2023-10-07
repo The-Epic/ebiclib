@@ -79,12 +79,12 @@ public class ArgumentCommandHandler extends SimpleCommandHandler {
         sender.sendMessage(MessageFormat.format(usageMessage.get(), arg, String.join(", ", allowedargs)));
     }
 
-    protected void addArgumentExecutor(String arg, SimpleCommandHandler exeuctor) {
-        this.subcommands.put(arg, exeuctor);
+    protected void addArgumentExecutor(String arg, SimpleCommandHandler executor) {
+        this.subcommands.put(arg, executor);
     }
 
-    protected void setDefault(SimpleCommandHandler exeuctor) {
-        this.defaultExecutor = exeuctor;
+    protected void setDefault(SimpleCommandHandler executor) {
+        this.defaultExecutor = executor;
     }
 
     public Supplier<String> getPermMessage() {
