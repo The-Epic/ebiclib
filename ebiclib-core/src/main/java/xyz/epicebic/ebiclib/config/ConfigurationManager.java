@@ -8,20 +8,11 @@ import java.util.logging.Logger;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 import xyz.epicebic.ebiclib.collection.WeightedRandom;
-import xyz.epicebic.ebiclib.config.adapter.CollectionAdapter;
-import xyz.epicebic.ebiclib.config.adapter.ConfigMappableAdapter;
-import xyz.epicebic.ebiclib.config.adapter.EnumAdapter;
-import xyz.epicebic.ebiclib.config.adapter.MapAdapter;
-import xyz.epicebic.ebiclib.config.adapter.MaterialAdapter;
-import xyz.epicebic.ebiclib.config.adapter.NamespacedKeyAdapter;
-import xyz.epicebic.ebiclib.config.adapter.PrimitiveAdapter;
-import xyz.epicebic.ebiclib.config.adapter.StringAdapter;
-import xyz.epicebic.ebiclib.config.adapter.StringTypeAdapter;
-import xyz.epicebic.ebiclib.config.adapter.TypeAdapter;
-import xyz.epicebic.ebiclib.config.adapter.WeightedRandomAdapter;
+import xyz.epicebic.ebiclib.config.adapter.*;
 import xyz.epicebic.ebiclib.config.annotation.ConfigMappable;
 
 public class ConfigurationManager {
@@ -50,6 +41,8 @@ public class ConfigurationManager {
         registerTypeAdapter(String.class, new StringTypeAdapter());
         registerTypeAdapter(NamespacedKey.class, new NamespacedKeyAdapter());
         registerTypeAdapter(Material.class, new MaterialAdapter());
+
+        registerTypeAdapter(ItemStack.class, new ItemStackAdapter());
 
     }
 

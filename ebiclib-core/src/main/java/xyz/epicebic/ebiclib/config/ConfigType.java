@@ -50,19 +50,16 @@ public class ConfigType<T> {
         for (int i = start; i < end; i++) {
             char c = str.charAt(i);
             switch (c) {
-            case '<':
-                depth++;
-                break;
-            case '>':
-                depth--;
-                break;
-            case ',':
-                if (depth != 0) {
-                    break;
+                case '<' -> depth++;
+                case '>' -> depth--;
+                case ',' -> {
+                    if (depth != 0) {
+                        break;
+                    }
+                    split.add(current.toString().trim());
+                    current = new StringBuilder();
+                    continue;
                 }
-                split.add(current.toString().trim());
-                current = new StringBuilder();
-                continue;
             }
             current.append(c);
         }
