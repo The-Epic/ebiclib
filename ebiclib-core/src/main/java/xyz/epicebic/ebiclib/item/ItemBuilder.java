@@ -16,6 +16,7 @@ import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.profile.PlayerProfile;
 import org.bukkit.profile.PlayerTextures;
+import xyz.epicebic.ebiclib.Formatting;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -76,9 +77,9 @@ public class ItemBuilder {
 
     public ItemBuilder name(String name, boolean append) {
         if (append) {
-            this.meta.setDisplayName(this.meta.getDisplayName() + name);
+            this.meta.setDisplayName(this.meta.getDisplayName() + Formatting.translate(name));
         } else {
-            this.meta.setDisplayName(name);
+            this.meta.setDisplayName(Formatting.translate(name));
         }
         return this;
     }
