@@ -7,11 +7,11 @@ public class StringTypeAdapter implements StringAdapter<String> {
 
     @Override
     public String toString(String value) {
-        return Formatting.translate(value);
+        return value;
     }
 
     @Override
     public String fromString(String value) {
-        return Formatting.miniMessageToLegacy(value);
+        return Formatting.translate(value);
     }
 }
